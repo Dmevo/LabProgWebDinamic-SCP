@@ -11,7 +11,7 @@ public class Pessoa {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idPessoa;
+    private Long idpessoa;
     @Column(nullable = false, unique = true)
     private char CPF;
     @Column(nullable = false, unique = true)
