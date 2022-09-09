@@ -1,5 +1,6 @@
 package br.edu.universidadedevassouras.SCP.service;
 
+import br.edu.universidadedevassouras.SCP.Repository.PessoaDAO;
 import org.springframework.boot.autoconfigure.security.SecurityProperties;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;

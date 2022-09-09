@@ -30,4 +30,10 @@ public class Pessoa {
 
     @Column(nullable = true)
     private String Foto;
+
+    @Column(nullable = false)
+    private String Username;
+
+    @Column(nullable = false)
+    private String Senha;
 }
