@@ -3,6 +3,7 @@ package br.edu.universidadedevassouras.SCP.Controller;
 import br.edu.universidadedevassouras.SCP.Repository.PessoaDAO;
 import br.edu.universidadedevassouras.SCP.Model.Pessoa;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Optional;
@@ -10,6 +11,9 @@ import java.util.Optional;
 @RestController
 @RequestMapping(path = "/pessoa")
 public class PessoaController {
+
+    @Autowired
+    private PasswordEncoder bCryptEncoder;
 
     @Autowired
     private PessoaDAO pessoaDAO;
@@ -29,7 +33,7 @@ public class PessoaController {
 
     @PostMapping
     public Pessoa postPessoa(@RequestBody Pessoa p){
-
+        p.setSenha(bCryptEncoder.encode(p.getSenha()));
         return pessoaDAO.save(p);
     }
 

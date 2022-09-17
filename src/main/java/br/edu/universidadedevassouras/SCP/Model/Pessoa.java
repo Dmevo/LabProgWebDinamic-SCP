@@ -1,10 +1,12 @@
 package br.edu.universidadedevassouras.SCP.Model;
 
 import lombok.Data;
+import lombok.Getter;
 
 import javax.persistence.*;
 import java.util.Date;
 
+@Getter
 @Data
 @Entity
 public class Pessoa {
@@ -16,10 +18,10 @@ public class Pessoa {
     @Column(nullable = false, unique = true)
     private String CPF;
 
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     private String Nome;
 
-    @Column(nullable = false)
+    @Column(nullable = false, unique = true)
     private int Matricula;
 
     @Column(nullable = true)
@@ -31,8 +33,8 @@ public class Pessoa {
     @Column(nullable = true)
     private String Foto;
 
-    @Column(nullable = false)
-    private String Username;
+    @Column(nullable = false, unique = true)
+    private String username;
 
     @Column(nullable = false)
     private String Senha;
