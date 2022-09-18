@@ -11,7 +11,7 @@ public class Presenca {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idPresenca;
+    private Long idpresenca;
 
     @Column(nullable = false)
     private Date Data;
@@ -20,5 +20,6 @@ public class Presenca {
     private Boolean Situacao;
 
     @ManyToOne
+    @JoinColumn(name = "pessoa.idpessoa")
     private Pessoa pessoa;
 }
